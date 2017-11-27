@@ -54,9 +54,29 @@
     <Compile Include="Migrations\201711232032345_InitialMigration.Designer.cs">
       <DependentUpon>201711232032345_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711271603335_AddingEntities.cs" />
+    <Compile Include="Migrations\201711271603335_AddingEntities.Designer.cs">
+      <DependentUpon>201711271603335_AddingEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271618454_removingProductXInvoiceFromInvoice.cs" />
+    <Compile Include="Migrations\201711271618454_removingProductXInvoiceFromInvoice.Designer.cs">
+      <DependentUpon>201711271618454_removingProductXInvoiceFromInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271707451_removingProductPerInvoiceEntity.cs" />
+    <Compile Include="Migrations\201711271707451_removingProductPerInvoiceEntity.Designer.cs">
+      <DependentUpon>201711271707451_removingProductPerInvoiceEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271709489_AddingProductPerInvoiceEntity.cs" />
+    <Compile Include="Migrations\201711271709489_AddingProductPerInvoiceEntity.Designer.cs">
+      <DependentUpon>201711271709489_AddingProductPerInvoiceEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272055597_CreateSPUserValidation.cs" />
+    <Compile Include="Migrations\201711272055597_CreateSPUserValidation.Designer.cs">
+      <DependentUpon>201711272055597_CreateSPUserValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRepository.cs" />
+    <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -73,6 +93,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711232032345_InitialMigration.resx">
       <DependentUpon>201711232032345_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271603335_AddingEntities.resx">
+      <DependentUpon>201711271603335_AddingEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271618454_removingProductXInvoiceFromInvoice.resx">
+      <DependentUpon>201711271618454_removingProductXInvoiceFromInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271707451_removingProductPerInvoiceEntity.resx">
+      <DependentUpon>201711271707451_removingProductPerInvoiceEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271709489_AddingProductPerInvoiceEntity.resx">
+      <DependentUpon>201711271709489_AddingProductPerInvoiceEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272055597_CreateSPUserValidation.resx">
+      <DependentUpon>201711272055597_CreateSPUserValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
