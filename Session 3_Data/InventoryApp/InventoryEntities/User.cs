@@ -12,4 +12,9 @@ namespace InventoryEntities
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
     }
+
+    public class UserIsAdminResult {
+        public int UserId { get; set; }
+        public bool IsAdmin { get; set; }
+    }
 }

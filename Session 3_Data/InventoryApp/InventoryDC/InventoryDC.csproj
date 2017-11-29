@@ -70,9 +70,9 @@
     <Compile Include="Migrations\201711271709489_AddingProductPerInvoiceEntity.Designer.cs">
       <DependentUpon>201711271709489_AddingProductPerInvoiceEntity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711272055597_CreateSPUserValidation.cs" />
-    <Compile Include="Migrations\201711272055597_CreateSPUserValidation.Designer.cs">
-      <DependentUpon>201711272055597_CreateSPUserValidation.cs</DependentUpon>
+    <Compile Include="Migrations\201711281427485_SP_UserValidation_Select.cs" />
+    <Compile Include="Migrations\201711281427485_SP_UserValidation_Select.Designer.cs">
+      <DependentUpon>201711281427485_SP_UserValidation_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="Migrations\201711271709489_AddingProductPerInvoiceEntity.resx">
       <DependentUpon>201711271709489_AddingProductPerInvoiceEntity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272055597_CreateSPUserValidation.resx">
-      <DependentUpon>201711272055597_CreateSPUserValidation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711281427485_SP_UserValidation_Select.resx">
+      <DependentUpon>201711281427485_SP_UserValidation_Select.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

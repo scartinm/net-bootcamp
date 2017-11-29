@@ -7,13 +7,13 @@ namespace InventoryDC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateSPUserValidation : IMigrationMetadata
+    public sealed partial class SP_UserValidation_Select : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateSPUserValidation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SP_UserValidation_Select));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711272055597_CreateSPUserValidation"; }
+            get { return "201711281427485_SP_UserValidation_Select"; }
         }
         
         string IMigrationMetadata.Source

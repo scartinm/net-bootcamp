@@ -1,20 +1,22 @@
-﻿using InventoryBC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace InventoryApp
 {
-   public class UserValidation
+    using InventoryBC;
+    using InventoryEntities;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class UserValidation
     {
         //Solicita la información del usuario para luego validarla
         UserLogic userLogic = new UserLogic();
+        AdminModule adminModule = new AdminModule();
 
         public void RequestUserData() {
             string user;
             string password;
+            
         
             Console.Write("Ingrese su usuario: ");
             user = Console.ReadLine();
@@ -23,9 +25,39 @@ namespace InventoryApp
             Console.Write("Ingrese su contraseña: ");
             password = ReadPassword();
 
-            var result = userLogic.userValidation(user,password);
+            List<UserIsAdminResult> userResult = userLogic.UserValidationBC(user, password);
+            bool hasElements = userResult.Any();
 
-            Console.WriteLine("Esto es una prueba mística: {0}", result);
+            if (hasElements == true)
+            {
+                foreach (var item in userResult)
+                {
+                    if (item.IsAdmin == true)
+                    {
+                        //aqui es donde debe llamar al menu de Administrador
+                        Console.Clear();
+                        Console.WriteLine("------------------------------------");
+                        Console.WriteLine("Bienvenido Administrador: {0}\n",user);
+                        adminModule.DisplayAdminModule();
+                        
+                    }
+                    else if (item.IsAdmin == false)
+                    {
+                        //aqui debe llamar al menú de usuario
+                        Console.WriteLine("------------------------------------");
+                        Console.WriteLine("Bienvenido Usuario");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Usuario o contraseña incorrecta. Intente de nuevo\n");
+                RequestUserData();
+            }
+
+            
+
+            
             Console.ReadLine();
       
 

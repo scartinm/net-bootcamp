@@ -11,6 +11,7 @@ namespace InventoryAppGUI
 
             UserValidation userValidation = new UserValidation();
 
+            Console.WriteLine("\t*****Bienvenido al sistema de inventarios*****\n");
             userValidation.RequestUserData();
            
             Console.ReadLine();
