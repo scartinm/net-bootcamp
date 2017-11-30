@@ -7,13 +7,14 @@ namespace InventoryApp
     using System.Collections.Generic;
     using System.Linq;
 
-    public class UserValidation
+    public class UserGUI
     {
         //Solicita la información del usuario para luego validarla
         UserLogic userLogic = new UserLogic();
         AdminModule adminModule = new AdminModule();
+      
 
-        public void RequestUserData() {
+        public void UserValidation() {
             string user;
             string password;
             
@@ -52,14 +53,51 @@ namespace InventoryApp
             else
             {
                 Console.WriteLine("Usuario o contraseña incorrecta. Intente de nuevo\n");
-                RequestUserData();
+                UserValidation();
             }
-
             
-
             
             Console.ReadLine();
-      
+     
+        }
+
+        public static void UserAdd() {
+
+            Console.Clear();
+
+            UserLogic userLogic = new UserLogic();
+            
+            string userName;
+            string password;
+            bool isAdmin = false;
+            var opcion = "x";
+            Console.WriteLine("*****CREACIÓN DE USUARIO*****\n");
+            Console.Write("Ingrese el nombre del usuario: ");
+            userName = Console.ReadLine();
+            Console.Write("Ingrese el password: ");
+            password = ReadPassword();
+
+            Console.WriteLine("Es el usuario administrador? si/no");
+            opcion = Console.ReadLine();
+            while (opcion != "si" && opcion != "no")
+            {
+                Console.WriteLine("Comando incorrecto, utilice las palabras reservadas si/no ");
+                Console.WriteLine("Es el usuario administrador? si/no");
+                opcion = Console.ReadLine();
+            }
+            switch (opcion)
+            {
+                case "si":
+                    isAdmin = true;
+                    break;
+                case "no":
+                    isAdmin = false;
+                    break;
+                default:
+                    break;
+            }
+
+            userLogic.UserAddBC(userName, password, isAdmin);
 
         }
 

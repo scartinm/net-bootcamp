@@ -9,10 +9,10 @@ namespace InventoryAppGUI
     {
         public static void Main(string[] args) {
 
-            UserValidation userValidation = new UserValidation();
+            UserGUI userGUI = new UserGUI();
 
             Console.WriteLine("\t*****Bienvenido al sistema de inventarios*****\n");
-            userValidation.RequestUserData();
+            userGUI.UserValidation();
            
             Console.ReadLine();
             

@@ -15,11 +15,12 @@ namespace InventoryDC.Migrations
                 },
                 @"SELECT UserId,IsAdmin FROM Users WHERE UserName = @UserName and Password = @Password"
                 );
+            
         }
 
         public override void Down()
         {
-            ; DropStoredProcedure("SPUserValidation");
+             DropStoredProcedure("SPUserValidation");
         }
     }
 }

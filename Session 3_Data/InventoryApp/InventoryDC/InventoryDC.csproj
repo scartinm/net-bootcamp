@@ -74,7 +74,12 @@
     <Compile Include="Migrations\201711281427485_SP_UserValidation_Select.Designer.cs">
       <DependentUpon>201711281427485_SP_UserValidation_Select.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711301650553_CreateUserSP.cs" />
+    <Compile Include="Migrations\201711301650553_CreateUserSP.Designer.cs">
+      <DependentUpon>201711301650553_CreateUserSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAL.cs" />
   </ItemGroup>
@@ -108,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711281427485_SP_UserValidation_Select.resx">
       <DependentUpon>201711281427485_SP_UserValidation_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711301650553_CreateUserSP.resx">
+      <DependentUpon>201711301650553_CreateUserSP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

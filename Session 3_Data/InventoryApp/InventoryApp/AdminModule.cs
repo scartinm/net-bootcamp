@@ -6,15 +6,19 @@ namespace InventoryApp
     using InventoryBC;
     using InventoryEntities;
     using System.Linq;
+    using System.Collections.Generic;
 
     public class AdminModule
     {
         ProductLogic productData = new ProductLogic();
+        UserLogic userData = new UserLogic();
+        //UserGUI UserGUI = new UserGUI();
 
         public void DisplayAdminModule() {
             
 
             Console.WriteLine("1) Imprimir inventario");
+            Console.WriteLine("2) Crear un nuevo usuario");
             Console.WriteLine("2) Crear un nuevo producto");
             Console.WriteLine("3) Modificar cantidad de un producto");
             Console.WriteLine("4) Eliminar un producto");
@@ -34,7 +38,9 @@ namespace InventoryApp
                     //Imprimir el inventario
                     break;
                 case 2:
-                    //Crear un nuevo producto
+                    //Crear un nuevo usuario
+                    
+                    UserGUI.UserAdd();
                     break;
                 case 3:
                     //Modificar cantidad de un producto
@@ -60,8 +66,15 @@ namespace InventoryApp
             }
         }
 
+        public void UserAdd() {
+            
+
+        }
+
         public void PrintInvetory() {
            List<Product> productList = productData.SelectProductsLogic().ToList();
+
         }
+
     }
 }
