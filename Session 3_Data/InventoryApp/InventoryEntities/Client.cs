@@ -13,5 +13,10 @@ namespace InventoryEntities
         [Required]
         public string Lastname { get; set; }
         public string Phone { get; set; }
+        //public bool enable { get; set; }
+    }
+
+    public class ClientNamebyId {
+        public string ClientName { get; set; }
     }
 }

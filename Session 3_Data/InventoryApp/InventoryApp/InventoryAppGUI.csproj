@@ -50,8 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminModule.cs" />
+    <Compile Include="CategoryGUI.cs" />
+    <Compile Include="ClientGUI.cs" />
     <Compile Include="InventoryMain.cs" />
+    <Compile Include="ProductGUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsGUI.cs" />
     <Compile Include="UserGUI.cs" />
   </ItemGroup>
   <ItemGroup>

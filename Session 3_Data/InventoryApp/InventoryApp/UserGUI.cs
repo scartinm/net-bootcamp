@@ -101,6 +101,31 @@ namespace InventoryApp
 
         }
 
+        public static void PrintUsers()
+        {
+            //Console.Clear();
+            //var cod = "Código";
+            //var nombre = "Nombre";
+            //var precio = "Precio";
+            //var cantidad = "Cantidad";
+            //var prodList = prodData.SelectProductsLogic();
+
+            //Console.WriteLine("\t \t********** LISTA DE PRODUCTOS **********\n");
+            //Console.WriteLine(AlignCentre(cod, 10) + " | " + AlignCentre(nombre, 30) + " | " + AlignCentre(precio, 10) + " | " + AlignCentre(cantidad, 10) + " | ");
+            //Console.WriteLine("-----------------------------------------------------------------------");
+            //foreach (var x in prodList)
+            //{
+            //    Console.WriteLine(AlignCentre(x.ProductId.ToString(), 10) + " | " + AlignCentre(x.Name, 30) + " | " + AlignCentre(x.Price.ToString(), 10) + " | " + AlignCentre(x.Quantity.ToString(), 10) + " | ");
+            //}
+
+        }
+
+        internal static void UserUpdate()
+        {
+            
+
+        }
+
         public static string ReadPassword()
         {
             string password = "";

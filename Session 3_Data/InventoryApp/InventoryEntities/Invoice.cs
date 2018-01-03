@@ -20,4 +20,21 @@ namespace InventoryEntities
         public virtual Client Client { get; set; }
         public virtual User User { get; set; }
     }
+
+    public class InvoiceReportResult {
+        public int InvoiceId { get; set; }
+        public DateTime InvoiceDate { get; set; }
+        public string ClientName { get; set; }
+        public string UserName { get; set; }
+
+    }
+
+   
+   
+    public class InvoiceTop3 {
+        public int ProductId { get; set; }
+        public string Name { get; set; }
+        public int Total_Quantity { get; set;}
+        public string CategoryName { get; set; }
+    }
 }

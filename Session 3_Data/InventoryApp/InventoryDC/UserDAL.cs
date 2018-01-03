@@ -18,6 +18,7 @@ namespace InventoryDC
         public IEnumerable<User> SelectUser() {
             //InvetoryAppDBContext db = new InvetoryAppDBContext();
             return db.Users.ToList();
+            
         }
 
         public List<UserIsAdminResult> UserValidationAsync(string userName, string password)
@@ -29,8 +30,9 @@ namespace InventoryDC
             
             
             return sqlResult.ToList();
+           
         }
-
+        //Crear un usuario
         public void UserInsert(string username, string password, bool isadmin)
         {
 
@@ -39,6 +41,7 @@ namespace InventoryDC
             SqlParameter paramisadmin = new SqlParameter("@isadmin", isadmin);
             db.Database.ExecuteSqlCommand("sp_user_add @username, @password, @isadmin", paramusername, parampassword, paramisadmin);
             Console.WriteLine("Usuario agregado exitosamente.");
+            
         }
 
         public void UserUpdate(int userId, string userName, string password, bool isAdmin) {
@@ -46,6 +49,7 @@ namespace InventoryDC
             SqlParameter paramUserName = new SqlParameter("@userName", userName);
             SqlParameter paramPassword = new SqlParameter("@password", password);
             SqlParameter paramIsAdmin = new SqlParameter("@isAdmin", isAdmin);
+            
 
 
         }

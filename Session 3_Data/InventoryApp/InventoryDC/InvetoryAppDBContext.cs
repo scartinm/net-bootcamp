@@ -13,8 +13,7 @@ namespace InventoryDC
         public DbSet<Client> Client { get; set; }
         public DbSet<Invoice> Invoice { get; set; }
         public DbSet<ProductPerInvoice> ProductPerInvoice { get; set; }
-
-  
-
+        
     }
+    
 }
