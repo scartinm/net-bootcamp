@@ -32,5 +32,10 @@ namespace InventoryBC
             datos.ProdQuantityUpdateDAL(productId, cantidad);
             datos.RefreshAll();
         }
+
+        public void ProductDeleteLogic(int productId)
+        {
+            datos.productDelete(productId);
+        }
     }
 }

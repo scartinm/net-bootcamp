@@ -13,9 +13,10 @@ namespace InventoryDC
         InvetoryAppDBContext db = new InvetoryAppDBContext();
         CommonDALFunctions DALFunc = new CommonDALFunctions();
 
-        public IEnumerable<Product> SelectProducts()
+        public List<Product> SelectProducts()
         {
-            return db.Product.ToList();
+            var sqlResult = db.Database.SqlQuery<Product>("SP_Product_Get_Status_True").ToList();
+            return sqlResult;
         }
 
         //Insertar un producto
@@ -25,8 +26,15 @@ namespace InventoryDC
             SqlParameter paramCantidad = new SqlParameter("@quantity", cantidad);
             SqlParameter paramCategory = new SqlParameter("@category", categoria);
             db.Database.ExecuteSqlCommand("SP_Product_Add @name, @price, @quantity, @category", paramNombre, paramPrecio, paramCantidad, paramCategory);
-            Console.WriteLine("Producto agregado exitosamente.");
+            Console.WriteLine("\nProducto agregado exitosamente.\n");
             //DALFunc.RefreshAll();
+        }
+
+        public void productDelete(int productId)
+        {
+            SqlParameter paramProductId = new SqlParameter("@productId", productId);
+            db.Database.ExecuteSqlCommand("SP_Product_Disable @productId", paramProductId);
+            Console.WriteLine("\nProducto eliminado exitosamente.\n");
         }
 
         public void ProdQuantityUpdateDAL(int productId, int cantidad)
@@ -34,7 +42,7 @@ namespace InventoryDC
             SqlParameter paramProductId = new SqlParameter("@productId", productId);
             SqlParameter paramCantidad = new SqlParameter("@quantity", cantidad);
             db.Database.ExecuteSqlCommand("SP_Product_Update_ById @productId, @quantity", paramProductId, paramCantidad);
-            Console.WriteLine("Producto actualizado exitosamente.");
+            Console.WriteLine("\nProducto actualizado exitosamente.\n");
             //DALFunc.RefreshAll();
            
         }

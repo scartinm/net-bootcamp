@@ -53,6 +53,7 @@
     <Compile Include="ClientDAL.cs" />
     <Compile Include="CommonDALFunctions.cs" />
     <Compile Include="InvetoryAppDBContext.cs" />
+    <Compile Include="InvoiceDAL.cs" />
     <Compile Include="Migrations\201711232032345_InitialMigration.cs" />
     <Compile Include="Migrations\201711232032345_InitialMigration.Designer.cs">
       <DependentUpon>201711232032345_InitialMigration.cs</DependentUpon>
@@ -93,10 +94,6 @@
     <Compile Include="Migrations\201712181623513_SP_Product_Update_ById.Designer.cs">
       <DependentUpon>201712181623513_SP_Product_Update_ById.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712182104156_SP_Clients_Add.cs" />
-    <Compile Include="Migrations\201712182104156_SP_Clients_Add.Designer.cs">
-      <DependentUpon>201712182104156_SP_Clients_Add.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201712191602202_SP_Clients_Update.cs" />
     <Compile Include="Migrations\201712191602202_SP_Clients_Update.Designer.cs">
       <DependentUpon>201712191602202_SP_Clients_Update.cs</DependentUpon>
@@ -113,9 +110,33 @@
     <Compile Include="Migrations\201801021933051_getClientNameByID.Designer.cs">
       <DependentUpon>201801021933051_getClientNameByID.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801022056538_AddingStatusToClientsTable.cs" />
-    <Compile Include="Migrations\201801022056538_AddingStatusToClientsTable.Designer.cs">
-      <DependentUpon>201801022056538_AddingStatusToClientsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201801041622141_SP_Clients_get_enable_clients.cs" />
+    <Compile Include="Migrations\201801041622141_SP_Clients_get_enable_clients.Designer.cs">
+      <DependentUpon>201801041622141_SP_Clients_get_enable_clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041633437_SP_Clients_insert.cs" />
+    <Compile Include="Migrations\201801041633437_SP_Clients_insert.Designer.cs">
+      <DependentUpon>201801041633437_SP_Clients_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041656242_SP_Client_Disable.cs" />
+    <Compile Include="Migrations\201801041656242_SP_Client_Disable.Designer.cs">
+      <DependentUpon>201801041656242_SP_Client_Disable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041722554_SP_Product_Get_Status_True.cs" />
+    <Compile Include="Migrations\201801041722554_SP_Product_Get_Status_True.Designer.cs">
+      <DependentUpon>201801041722554_SP_Product_Get_Status_True.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041727255_SP_Product_Disable.cs" />
+    <Compile Include="Migrations\201801041727255_SP_Product_Disable.Designer.cs">
+      <DependentUpon>201801041727255_SP_Product_Disable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801042036210_SP_Invoice_Insert.cs" />
+    <Compile Include="Migrations\201801042036210_SP_Invoice_Insert.Designer.cs">
+      <DependentUpon>201801042036210_SP_Invoice_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801042103331_SP_Invoice_Select_Last_Added.cs" />
+    <Compile Include="Migrations\201801042103331_SP_Invoice_Select_Last_Added.Designer.cs">
+      <DependentUpon>201801042103331_SP_Invoice_Select_Last_Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDAL.cs" />
@@ -166,9 +187,6 @@
     <EmbeddedResource Include="Migrations\201712181623513_SP_Product_Update_ById.resx">
       <DependentUpon>201712181623513_SP_Product_Update_ById.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712182104156_SP_Clients_Add.resx">
-      <DependentUpon>201712182104156_SP_Clients_Add.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712191602202_SP_Clients_Update.resx">
       <DependentUpon>201712191602202_SP_Clients_Update.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,8 +199,26 @@
     <EmbeddedResource Include="Migrations\201801021933051_getClientNameByID.resx">
       <DependentUpon>201801021933051_getClientNameByID.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801022056538_AddingStatusToClientsTable.resx">
-      <DependentUpon>201801022056538_AddingStatusToClientsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801041622141_SP_Clients_get_enable_clients.resx">
+      <DependentUpon>201801041622141_SP_Clients_get_enable_clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041633437_SP_Clients_insert.resx">
+      <DependentUpon>201801041633437_SP_Clients_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041656242_SP_Client_Disable.resx">
+      <DependentUpon>201801041656242_SP_Client_Disable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041722554_SP_Product_Get_Status_True.resx">
+      <DependentUpon>201801041722554_SP_Product_Get_Status_True.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041727255_SP_Product_Disable.resx">
+      <DependentUpon>201801041727255_SP_Product_Disable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801042036210_SP_Invoice_Insert.resx">
+      <DependentUpon>201801042036210_SP_Invoice_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801042103331_SP_Invoice_Select_Last_Added.resx">
+      <DependentUpon>201801042103331_SP_Invoice_Select_Last_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

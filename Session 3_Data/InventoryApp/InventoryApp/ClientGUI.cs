@@ -37,6 +37,8 @@ namespace InventoryApp
             var telefono = "Teléfono";
             var clientList = clientData.SelectClientLogic();
 
+            
+
             Console.WriteLine("\t \t********** LISTA DE CLIENTES **********\n");
             Console.WriteLine(AlignCentre(cod, 10) + " | " + AlignCentre(nombre, 20) + " | " + AlignCentre(apellido, 15) + " | " + AlignCentre(telefono, 20) + " | ");
             Console.WriteLine("-----------------------------------------------------------------------------");
@@ -84,6 +86,20 @@ namespace InventoryApp
             clientData.ClientUpdate(cod, name, lastname, phone);
             Console.WriteLine("LISTA DE CLIENTES ACTUALIZADA: ");
             ClientSelect();
+        }
+
+        internal static void ClientDelete()
+        {
+            int clientId;
+
+            Console.Clear();
+            Console.WriteLine("\t\t*****Eliminar un cliente******\n");
+            ClientSelect();
+            Console.Write("\nSeleccione el código del cliente que desea eliminar: ");
+            clientId =Convert.ToInt32(Console.ReadLine());
+
+            clientData.clientDisable(clientId);
+            Console.WriteLine("\nCliente eliminado exitosamente ");
         }
     }
 

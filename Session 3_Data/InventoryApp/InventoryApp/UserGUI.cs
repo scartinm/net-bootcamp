@@ -10,11 +10,13 @@ namespace InventoryApp
     public class UserGUI
     {
         //Solicita la información del usuario para luego validarla
-        UserLogic userLogic = new UserLogic();
-        AdminModule adminModule = new AdminModule();
-      
+        static UserLogic userLogic = new UserLogic();
+        static AdminModule adminModule = new AdminModule();
+        static UserModule userModule = new UserModule();
 
-        public void UserValidation() {
+        public static int userId;
+
+        public static void UserValidation() {
             string user;
             string password;
             
@@ -28,6 +30,7 @@ namespace InventoryApp
 
             List<UserIsAdminResult> userResult = userLogic.UserValidationBC(user, password);
             bool hasElements = userResult.Any();
+            userId = userResult.Select(x => x.UserId).FirstOrDefault();
 
             if (hasElements == true)
             {
@@ -45,8 +48,10 @@ namespace InventoryApp
                     else if (item.IsAdmin == false)
                     {
                         //aqui debe llamar al menú de usuario
+                        Console.Clear();
                         Console.WriteLine("------------------------------------");
-                        Console.WriteLine("Bienvenido Usuario");
+                        Console.WriteLine("Bienvenido Usuario: {0}\n", user);
+                        userModule.DisplayUserModule();
                     }
                 }
             }

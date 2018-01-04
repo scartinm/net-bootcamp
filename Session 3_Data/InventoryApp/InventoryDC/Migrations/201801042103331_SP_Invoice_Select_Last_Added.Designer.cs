@@ -7,13 +7,13 @@ namespace InventoryDC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SP_Clients_Add : IMigrationMetadata
+    public sealed partial class SP_Invoice_Select_Last_Added : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SP_Clients_Add));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SP_Invoice_Select_Last_Added));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712182104156_SP_Clients_Add"; }
+            get { return "201801042103331_SP_Invoice_Select_Last_Added"; }
         }
         
         string IMigrationMetadata.Source

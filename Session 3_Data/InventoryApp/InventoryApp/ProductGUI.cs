@@ -69,6 +69,17 @@ namespace InventoryApp
 
         }
 
+        internal static void ProductDelete()
+        {
+            int productId;
+
+            Console.Clear();
+            PrintInventory();
+            Console.Write("\nSeleccione el código del producto que desea eliminar: ");
+            productId = Convert.ToInt32(Console.ReadLine());
+            prodData.ProductDeleteLogic(productId);
+        }
+
         internal static void ProdQuantityUpdate()
         {
             int ProductId;

@@ -32,6 +32,11 @@ namespace InventoryBC
             var ClientName = clientData.GetClientNameById(ClientId);
             return ClientName;
         }
+
+        public void clientDisable(int clientId)
+        {
+            clientData.clientDisable(clientId);
+        }
     }
 
 }

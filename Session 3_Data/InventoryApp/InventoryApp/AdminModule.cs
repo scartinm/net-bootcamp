@@ -4,9 +4,6 @@ namespace InventoryApp
 {
     using System;
     using InventoryBC;
-    using InventoryEntities;
-    using System.Linq;
-    using System.Collections.Generic;
 
     public class AdminModule
     {
@@ -68,11 +65,12 @@ namespace InventoryApp
                     case 5:
                         //Eliminar un producto
                         Console.Clear();
-                        Console.WriteLine("La página se encuentra bajo mantenimiento, gracias por su comprensión!");
+                        ProductGUI.ProductDelete();
                         Continuar();
                         break;
                     case 6:
                         //Mostrar lista de clientes
+                        Console.Clear();
                         ClientGUI.ClientSelect();
                         Continuar();
                         break;
@@ -90,7 +88,7 @@ namespace InventoryApp
                     case 9:
                         //Eliminar un cliente
                         Console.Clear();
-                        Console.WriteLine("La página se encuentra bajo mantenimiento, gracias por su comprensión!");
+                        ClientGUI.ClientDelete();
                         Continuar();
                         break;
                     case 10:
@@ -101,7 +99,6 @@ namespace InventoryApp
                     default:
                         //valor incorrecto volverlo a intentar
                         salir = true;
-
                         break;
                 }
             } while (!salir);
@@ -113,11 +110,7 @@ namespace InventoryApp
 
         }
 
-        public void PrintInvetory() {
-           List<Product> productList = productData.SelectProductsLogic().ToList();
-
-        }
-
+        
         public void Continuar()
         {
             Console.WriteLine();

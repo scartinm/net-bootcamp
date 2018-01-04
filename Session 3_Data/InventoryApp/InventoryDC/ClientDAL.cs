@@ -17,14 +17,21 @@ namespace InventoryDC
             SqlParameter paramClientLastName = new SqlParameter("@clientLastName", clientLastName);
             SqlParameter paramPhone = new SqlParameter("@phone", phone);
 
-            db.Database.ExecuteSqlCommand("SP_Clients_Add @clientName, @clientLastName, @phone", paramClientName, paramClientLastName, paramPhone);
+            db.Database.ExecuteSqlCommand("SP_Clients_Insert @clientName, @clientLastName, @phone", paramClientName, paramClientLastName, paramPhone);
             Console.WriteLine("El cliente se ingresó correctamente");
         }
 
         
-        public IEnumerable<Client> SelectClient()
+        public List<Client> SelectClient()
         {
-            return db.Client.ToList();
+            var sqlResult = db.Database.SqlQuery<Client>("SP_Clients_get_status_true").ToList() ;
+            return sqlResult;
+        }
+
+        public void clientDisable(int clientId)
+        {
+            SqlParameter paramClientId = new SqlParameter("@clientId", clientId);
+            db.Database.ExecuteSqlCommand("SP_Client_Disable @clientId", paramClientId);
         }
 
         public void ClientUpdateDAL(int cod, string name, string lastname, string phone)
