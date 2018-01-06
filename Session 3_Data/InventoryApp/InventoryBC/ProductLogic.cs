@@ -37,5 +37,31 @@ namespace InventoryBC
         {
             datos.productDelete(productId);
         }
+
+        public bool ValidadCantidadPorComprar(int productIdPorAgregar, int cantidadPorDescontar)
+        {
+            //aqui va la lógica
+            
+
+            var Listcantidad = datos.CantidadEnExistencia(productIdPorAgregar);
+
+            int cantidadEnInventario = Listcantidad.Select(x => x.quantity).FirstOrDefault();
+            int nuevaCantidadEnInventario;
+
+            bool compraValida;
+
+            if (cantidadPorDescontar <= cantidadEnInventario)
+            {
+                compraValida = true;
+                nuevaCantidadEnInventario = cantidadEnInventario - cantidadPorDescontar;
+                datos.ProdQuantityUpdateDAL(productIdPorAgregar, nuevaCantidadEnInventario);
+            }
+            else
+            {
+                compraValida = false;
+            }
+
+            return compraValida;
+        }
     }
 }

@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201801042103331_SP_Invoice_Select_Last_Added.Designer.cs">
       <DependentUpon>201801042103331_SP_Invoice_Select_Last_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801051748376_SP_Product_GetQuantity.cs" />
+    <Compile Include="Migrations\201801051748376_SP_Product_GetQuantity.Designer.cs">
+      <DependentUpon>201801051748376_SP_Product_GetQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801042103331_SP_Invoice_Select_Last_Added.resx">
       <DependentUpon>201801042103331_SP_Invoice_Select_Last_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801051748376_SP_Product_GetQuantity.resx">
+      <DependentUpon>201801051748376_SP_Product_GetQuantity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

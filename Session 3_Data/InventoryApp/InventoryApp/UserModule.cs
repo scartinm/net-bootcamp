@@ -10,7 +10,7 @@ namespace InventoryApp
     {
         static int userId = UserGUI.userId;
 
-        public void DisplayUserModule() {
+        static public void DisplayUserModule() {
             Console.WriteLine("*******Seleccione la opción a realizar*******\n");
             Console.WriteLine("1) Imprimir inventario");
             Console.WriteLine("2) Crear una nueva factura");
@@ -21,7 +21,7 @@ namespace InventoryApp
             ChoseAdminOption(option);
         }
 
-        private void ChoseAdminOption(int option)
+        static private void ChoseAdminOption(int option)
         {
             bool salir = false;
             do
@@ -53,13 +53,13 @@ namespace InventoryApp
             } while (!salir);
         }
 
-        public void Continuar()
+        static public void Continuar()
         {
             Console.WriteLine();
             Console.WriteLine(">>> presione cualquier tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
-            //DisplayUserModule();
+            DisplayUserModule();
 
         }
     }

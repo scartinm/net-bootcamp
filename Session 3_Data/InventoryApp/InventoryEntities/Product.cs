@@ -20,4 +20,10 @@ namespace InventoryEntities
         public bool status { get; set; }
         public virtual Category Category { get; set; }
     }
+
+    public class ProductQuantity {
+
+        public int productId { get; set; }
+        public int quantity { get; set; }
+    }
 }

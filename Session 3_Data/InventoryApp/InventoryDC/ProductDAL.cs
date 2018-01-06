@@ -37,6 +37,14 @@ namespace InventoryDC
             Console.WriteLine("\nProducto eliminado exitosamente.\n");
         }
 
+        public List<ProductQuantity> CantidadEnExistencia(int productIdPorAgregar)
+        {
+            SqlParameter paramProductId = new SqlParameter("@productId", productIdPorAgregar);
+
+            var sqlResult = db.Database.SqlQuery<ProductQuantity>("SP_Product_GetQuantity @productId", paramProductId).ToList();
+            return sqlResult;
+        }
+
         public void ProdQuantityUpdateDAL(int productId, int cantidad)
         {
             SqlParameter paramProductId = new SqlParameter("@productId", productId);

@@ -8,7 +8,7 @@ namespace InventoryDC.Migrations
         public override void Up()
         {
             CreateStoredProcedure("SP_Invoice_Select_Last_Added",
-                body: @"SELECT TOP 1 * FROM Invoices ORDER BY InvoiceId desc");
+                body: @"SELECT TOP 1 InvoiceId FROM Invoices ORDER BY InvoiceId desc");
         }
         
         public override void Down()

@@ -51,7 +51,7 @@ namespace InventoryApp
                         Console.Clear();
                         Console.WriteLine("------------------------------------");
                         Console.WriteLine("Bienvenido Usuario: {0}\n", user);
-                        userModule.DisplayUserModule();
+                        UserModule.DisplayUserModule();
                     }
                 }
             }
