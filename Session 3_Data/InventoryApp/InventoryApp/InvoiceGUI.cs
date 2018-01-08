@@ -84,12 +84,28 @@ namespace InventoryApp
                                 Console.Write("cantidad: ");
                                 cantidadPorDescontar = Convert.ToInt32(Console.ReadLine());
                                 compraValida = productLogic.ValidadCantidadPorComprar(productIdPorAgregar, cantidadPorDescontar);
+                                if (compraValida)
+                                {
+                                    Console.Write("se agregó el producto exitosamente a la factura, desea agregar otro? si/no: ");
+                                    seguir = Console.ReadLine();
+                                    if (seguir == "si")
+                                    {
+                                        creandoFactura = true;
+                                    }
+                                    else if (seguir == "no")
+                                    {
+                                        creandoFactura = false;
+                                    }
+                                }
+                                
 
                                 break;
                             case 2:
                                 creandoFactura = true;
+                                compraValida = true;
                                 break;
                             case 3:
+                                compraValida = true;
                                 creandoFactura = false;
                                 break;
                             default:
@@ -97,7 +113,6 @@ namespace InventoryApp
                         }
                     }
                     
-
                 }
                        
             }

@@ -6,6 +6,7 @@ namespace InventoryApp
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading;
 
     public class UserGUI
     {
@@ -15,6 +16,7 @@ namespace InventoryApp
         static UserModule userModule = new UserModule();
 
         public static int userId;
+        private static Timer aTimer;
 
         public static void UserValidation() {
             string user;
@@ -42,8 +44,19 @@ namespace InventoryApp
                         Console.Clear();
                         Console.WriteLine("------------------------------------");
                         Console.WriteLine("Bienvenido Administrador: {0}\n",user);
-                        adminModule.DisplayAdminModule();
                         
+                        adminModule.DisplayAdminModule();
+
+                        var timer = new System.Threading.Timer(
+                        e => closeApp(),
+                        null,
+                        TimeSpan.Zero,
+                        TimeSpan.FromMinutes(1));
+
+
+
+
+
                     }
                     else if (item.IsAdmin == false)
                     {
@@ -106,30 +119,7 @@ namespace InventoryApp
 
         }
 
-        public static void PrintUsers()
-        {
-            //Console.Clear();
-            //var cod = "Código";
-            //var nombre = "Nombre";
-            //var precio = "Precio";
-            //var cantidad = "Cantidad";
-            //var prodList = prodData.SelectProductsLogic();
-
-            //Console.WriteLine("\t \t********** LISTA DE PRODUCTOS **********\n");
-            //Console.WriteLine(AlignCentre(cod, 10) + " | " + AlignCentre(nombre, 30) + " | " + AlignCentre(precio, 10) + " | " + AlignCentre(cantidad, 10) + " | ");
-            //Console.WriteLine("-----------------------------------------------------------------------");
-            //foreach (var x in prodList)
-            //{
-            //    Console.WriteLine(AlignCentre(x.ProductId.ToString(), 10) + " | " + AlignCentre(x.Name, 30) + " | " + AlignCentre(x.Price.ToString(), 10) + " | " + AlignCentre(x.Quantity.ToString(), 10) + " | ");
-            //}
-
-        }
-
-        internal static void UserUpdate()
-        {
-            
-
-        }
+       
 
         public static string ReadPassword()
         {
@@ -163,6 +153,10 @@ namespace InventoryApp
             // add a new line because user pressed enter at the end of their password
             Console.WriteLine();
             return password;
+        }
+
+        static public void closeApp() {
+            Environment.Exit(0);
         }
 
     }

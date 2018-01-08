@@ -43,7 +43,9 @@ namespace InventoryApp
                         break;
 
                     case 3:
-                        
+                        //Entrar al menú de los reportes.
+                        ReportsGUI.displayReportsMenu();
+                        Continuar();
                         break;
                     default:
                         //valor incorrecto volverlo a intentar
